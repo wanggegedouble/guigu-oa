@@ -1,6 +1,6 @@
-package com.wy.auth.service.impl;
+package com.wy.auth.service.Impl;
 
-import com.wy.auth.entity.SysUser;
+import com.atguigu.model.system.SysUser;
 import com.wy.auth.mapper.SysUserMapper;
 import com.wy.auth.service.SysUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
