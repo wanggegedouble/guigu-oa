@@ -1,6 +1,7 @@
 package com.wy.auth.controller;
 
 import com.atguigu.model.system.SysRole;
+import com.atguigu.vo.system.AssginRoleVo;
 import com.atguigu.vo.system.SysRoleQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -15,6 +16,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Api(tags = "角色管理接口")
 @RequestMapping("/controller/sysRole")
@@ -83,6 +85,11 @@ public class SysRoleController {
         return Result.fail();
     }
 
+    /**
+     *
+     * @param idList  批量删除Id的集合
+     * @return
+     */
     @ApiOperation("批量删除")
     @DeleteMapping("batchDelete")
     public Result batchDelete(@PathVariable List<Long> idList){
@@ -92,4 +99,21 @@ public class SysRoleController {
         }
         return Result.fail();
     }
+
+    @ApiOperation("获取用户角色数据")
+    @GetMapping("/toAssign/{userId}")
+    public Result toAssign(@PathVariable Long userId){
+        Map<String,Object> user_role = sysRoleService.findRoleDataByUserId(userId);
+        log.info(user_role.toString());
+        return Result.ok(user_role);
+    }
+
+    @ApiOperation(value = "根据用户分配角色")
+    @PostMapping("/doAssign")
+    public Result doAssign(@RequestBody AssginRoleVo assginRoleVo) {
+        sysRoleService.doAssign(assginRoleVo);
+        return Result.ok();
+    }
+
+
 }
