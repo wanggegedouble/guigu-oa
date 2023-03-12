@@ -13,11 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,7 +36,7 @@ public class SysUserController {
     @ApiOperation("查询所有用户")
     @GetMapping("/findUsers")
     public Result findUsers(){
-        List<SysUser> users = (List<SysUser>) userService.list();
+        List<SysUser> users = userService.list();
         return Result.ok(users);
     }
 
@@ -67,6 +63,21 @@ public class SysUserController {
         IPage<SysUser> sysUserPage = userService.page(pageParam,wrapper);
         return Result.ok(sysUserPage);
     }
+
+    @ApiOperation("修改用户状态")
+    @GetMapping("updateStatus/{id}/{status}")
+    public Result updateStatus(@PathVariable Long id,@PathVariable Integer status){
+        userService.updateStatus(id,status);
+        return Result.ok();
+    }
+
+    @ApiOperation("更新用户数据")
+    @PutMapping("/updateUser")
+    public Result updateById(@RequestBody SysUser sysUser) {
+        userService.updateById(sysUser);
+        return Result.ok();
+    }
+
 
 }
 

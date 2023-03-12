@@ -1,6 +1,7 @@
 package com.wy.auth.service;
 
-import com.wy.auth.entity.SysRoleMenu;
+
+import com.atguigu.model.system.SysRoleMenu;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

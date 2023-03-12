@@ -1,6 +1,6 @@
-package com.wy.auth.service.impl;
+package com.wy.auth.service.Impl;
 
-import com.wy.auth.entity.SysRoleMenu;
+import com.atguigu.model.system.SysRoleMenu;
 import com.wy.auth.mapper.SysRoleMenuMapper;
 import com.wy.auth.service.SysRoleMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -30,21 +30,29 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         LambdaQueryWrapper<SysUserRole> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(SysUserRole::getUserId,userId);
         List<SysUserRole> existUserRoleList = userRoleService.list(wrapper);
+        log.info("用户所对应角色id");
+        log.info(existUserRoleList.toString());
         //从查询出来的用户id对应角色list集合，获取所有角色id
         List<Long> existRoleIdList =
                 existUserRoleList.stream().map(c -> c.getRoleId()).collect(Collectors.toList());
+        log.info("从查询出来的用户id对应角色list集合，获取所有角色id");
+        log.info(existRoleIdList.toString());
         //3 根据角色Id 找打对应的角色信息 根据角色id 到角色list 集合查找
         List<SysRole> assignRoleList = new ArrayList<>();
         for(SysRole sysRole : sysRoles) {
-            //比较
+        //比较
             if(existRoleIdList.contains(sysRole.getId())) {
                 assignRoleList.add(sysRole);
             }
         }
+        log.info("根据角色Id 找打对应的角色信息 根据角色id 到角色list 集合查找");
+        log.info(assignRoleList.toString());
         //4 把两部分结果封装成map 返回。
         Map<String, Object> roleMap = new HashMap<>();
         roleMap.put("assginRoleList", assignRoleList);
-       // roleMap.put("allRolesList", sysRoles);
+        log.info("把两部分结果封装成map 返回");
+        log.info(roleMap.toString());
+        // roleMap.put("allRolesList", sysRoles);
         return roleMap;
     }
 
@@ -57,6 +65,8 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
 
         //重新进行分配
         List<Long> roleIdList = assginRoleVo.getRoleIdList();
+        log.info("roleIdList:");
+        log.info(roleIdList.toString());
         for(Long roleId:roleIdList) {
             if(StringUtils.isEmpty(roleId)) {
                 continue;

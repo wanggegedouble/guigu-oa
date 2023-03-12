@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e50dbb67-4f8b-4605-ae22-5b73757876ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysRoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/MybatisPlus/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/MybatisPlus/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/knife4j/Knife4jConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/knife4j/Knife4jConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/ServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/ServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysMenuService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +78,8 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;9e8e90fd9deb19ca70adff9666833ee8&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;407630d112ebb1f0b86f9e974e3bd5e7&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -91,8 +95,11 @@
       <recent name="" />
       <recent name="com.wy.auth" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wy.auth" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.CodeGet">
+  <component name="RunManager" selected="Spring Boot.ServiceApplication">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="common-util" />
@@ -160,9 +167,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CodeGet" />
         <item itemvalue="Spring Boot.ServiceApplication" />
-        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.TestMPDemo01.getAll" />
         <item itemvalue="JUnit.MyTest.getAll" />
       </list>
@@ -183,7 +188,9 @@
       <workItem from="1678457989386" duration="8863000" />
       <workItem from="1678469080958" duration="17416000" />
       <workItem from="1678528889701" duration="11342000" />
-      <workItem from="1678558371302" duration="1049000" />
+      <workItem from="1678558371302" duration="20973000" />
+      <workItem from="1678699007946" duration="81000" />
+      <workItem from="1678699104605" duration="19693000" />
     </task>
     <servers />
   </component>

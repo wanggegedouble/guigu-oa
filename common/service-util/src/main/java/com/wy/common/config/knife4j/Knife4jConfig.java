@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@EnableSwagger2WebMvc
 public class Knife4jConfig {
     @Bean
     public Docket adminApiConfig(){

@@ -1,7 +1,9 @@
 package com.wy.auth.mapper;
 
-import com.wy.auth.entity.SysRoleMenu;
+
+import com.atguigu.model.system.SysRoleMenu;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +13,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author wy
  * @since 2023-03-12
  */
+@Mapper
 public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenu> {
 
 }
