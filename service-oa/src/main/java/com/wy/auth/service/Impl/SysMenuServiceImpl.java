@@ -3,6 +3,7 @@ package com.wy.auth.service.Impl;
 import com.atguigu.model.system.SysMenu;
 import com.atguigu.model.system.SysRoleMenu;
 import com.atguigu.vo.system.AssginMenuVo;
+import com.atguigu.vo.system.RouterVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.wy.auth.mapper.SysMenuMapper;
 import com.wy.auth.service.SysMenuService;
@@ -106,5 +107,15 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             sysRoleMenu.setRoleId(assginMenuVo.getRoleId());
             roleMenuService.save(sysRoleMenu);
         }
+    }
+
+    @Override
+    public List<RouterVo> findUserMenuListByUserId(Long userId) {
+        return null;
+    }
+
+    @Override
+    public List<String> findUserPermsByUserId(Long userId) {
+        return null;
     }
 }
