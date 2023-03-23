@@ -1,7 +1,10 @@
 package com.wy.auth.service;
 
 import com.atguigu.model.system.SysUser;
+import com.atguigu.vo.system.RouterVo;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,6 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SysUserService extends IService<SysUser> {
 
+    //修该用户状态
     void updateStatus(Long id, Integer status);
 
 }

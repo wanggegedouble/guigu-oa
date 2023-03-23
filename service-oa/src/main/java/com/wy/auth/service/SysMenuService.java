@@ -4,6 +4,7 @@ import com.atguigu.model.system.SysMenu;
 import com.atguigu.vo.system.AssginMenuVo;
 import com.atguigu.vo.system.RouterVo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -36,7 +37,18 @@ public interface SysMenuService extends IService<SysMenu> {
      */
     void doAssign(AssginMenuVo assginMenuVo);
 
-    List<RouterVo> findUserMenuListByUserId(Long userId);
+    /**
+     * 查询数据库动态构建路由结构，进行显示
+     * @param userId
+     * @return
+     */
 
+    List<RouterVo> findUserMenuListByUserId(@Param("userId") Long userId);
+
+    /**
+     * 根据用户id获取用户可以操作按钮列表
+     * @param userId
+     * @return
+     */
     List<String> findUserPermsByUserId(Long userId);
 }

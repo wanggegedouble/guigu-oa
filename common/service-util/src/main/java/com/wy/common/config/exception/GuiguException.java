@@ -2,9 +2,12 @@ package com.wy.common.config.exception;
 
 import com.wy.common.result.ResultCodeEnum;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class GuiguException extends RuntimeException{
+public class GuiguException extends RuntimeException {
+
     private Integer code;//状态码
     private String msg;//描述信息
 

@@ -6,14 +6,9 @@ package com.atguigu.vo.system;
  */
 public class LoginVo {
 
-    /**
-     * 手机号
-     */
+    // 手机号
     private String username;
-
-    /**
-     * 密码
-     */
+    //密码
     private String password;
 
     public String getUsername() {

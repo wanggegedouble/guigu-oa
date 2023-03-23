@@ -29,14 +29,14 @@ public class SysMenuController {
     private SysMenuService menuService;
 
     @ApiOperation("菜单列表")
-    @GetMapping("/findMeus")
+    @GetMapping("findMeus")
     public Result findMenus(){
        List<SysMenu> menuList = menuService.findMenus();
         return Result.ok(menuList);
     }
 
     @ApiOperation("删除菜单")
-    @DeleteMapping("/deleteMenu{id}")
+    @DeleteMapping("deleteMenu/{id}")
     public Result deleteMenuById(@PathVariable Long id) {
         menuService.removeMenuById(id);
         return Result.ok();
@@ -51,9 +51,16 @@ public class SysMenuController {
     }
 
     @ApiOperation("角色分配菜单")
-    @PostMapping("/doAssign")
+    @PostMapping("doAssign")
     public Result doAssign(@RequestBody AssginMenuVo assginMenuVo) {
         menuService.doAssign(assginMenuVo);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "修改菜单")
+    @PutMapping("update")
+    public Result updateById(@RequestBody SysMenu sysMenu) {
+        menuService.updateById(sysMenu);
         return Result.ok();
     }
 

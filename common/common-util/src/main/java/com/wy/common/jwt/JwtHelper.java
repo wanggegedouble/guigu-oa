@@ -8,8 +8,8 @@ import java.util.Date;
 //jwt工具类
 public class JwtHelper {
 
-    private static long tokenExpiration = 365 * 24 * 60 * 60 * 1000;
-    private static String tokenSignKey = "123456";
+    private static final long tokenExpiration = 365L * 24 * 60 * 60 * 1000;
+    private static final String tokenSignKey = "123456";
 
     //根据用户id和用户名称生成token字符串
     public static String createToken(Long userId, String username) {
@@ -61,7 +61,7 @@ public class JwtHelper {
     }
 
     public static void main(String[] args) {
-        String token = JwtHelper.createToken(6L, "li4");
+        String token = JwtHelper.createToken(1L, "王尧");
         System.out.println(token);
         Long userId = JwtHelper.getUserId(token);
         String username = JwtHelper.getUsername(token);

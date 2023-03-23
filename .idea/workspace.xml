@@ -5,14 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e50dbb67-4f8b-4605-ae22-5b73757876ff" name="Changes" comment="menu">
-      <change afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/jwt/JwtHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/utils/MD5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oa/src/main/resources/static/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/jwt/JwtHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/jwt/JwtHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/result/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/result/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/result/ResultCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/MybatisPlus/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/MybatisPlus/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/exception/GuiguException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/exception/GuiguException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/vo/system/LoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/atguigu/vo/system/LoginVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/vo/system/MetaVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/atguigu/vo/system/MetaVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/vo/system/RouterVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/atguigu/vo/system/RouterVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/vo/wechat/BindPhoneVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/atguigu/vo/wechat/BindPhoneVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/ServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/ServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/mapper/SysMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/mapper/SysMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/mapper/xml/SysMenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/mapper/xml/SysMenuMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysRoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysUserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/resources/mapper/SysRoleMapper.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -30,15 +56,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/mapper/xml/SysMenuMapper.xml" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\apache-maven-3.9.0\mavn_repository" />
-        <option name="mavenHome" value="D:/apache-maven-3.9.0" />
-        <option name="userSettingsFile" value="D:\apache-maven-3.9.0\conf\settings.xml" />
+        <option name="localRepository" value="D:\maven\apache-maven-3.8.7\mavn_repository" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.8.7" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.8.7\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -56,37 +85,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_directory_selection": "C:/Users/huawei/Documents/Java_project/guigu-oa-parent/service-oa/src/test/java/com/wy",
-    "last_opened_file_path": "C:/Users/huawei/Documents/Java_project/guigu-oa-parent/service-oa/src/test/java/com/wy/code",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.gitee.ui.GiteeSettingsConfigurable",
-    "spring.configuration.checksum": "407630d112ebb1f0b86f9e974e3bd5e7",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/huawei/Documents/Java_project/guigu-oa-parent/service-oa/src/test/java/com/wy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/huawei/Documents/Java_project/guigu-oa-parent/service-oa/src/main/resources/static/file&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9e8e90fd9deb19ca70adff9666833ee8&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.wy.auth.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\huawei\Documents\Java_project\guigu-oa-parent\service-oa\src\main\resources\static\file" />
       <recent name="C:\Users\huawei\Documents\Java_project\guigu-oa-parent\service-oa\src\test\java\com\wy\code" />
       <recent name="C:\Users\huawei\Documents\Java_project\guigu-oa-parent\model\src\main\java" />
     </key>
@@ -102,19 +138,25 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ServiceApplication">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="common-util" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CodeGet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wy.code.CodeGet" />
       <module name="service-oa" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.wy.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JwtHelper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wy.common.jwt.JwtHelper" />
+      <module name="common-util" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wy.common.jwt.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,6 +214,8 @@
         <item itemvalue="Spring Boot.ServiceApplication" />
         <item itemvalue="JUnit.TestMPDemo01.getAll" />
         <item itemvalue="JUnit.MyTest.getAll" />
+        <item itemvalue="Application.JwtHelper" />
+        <item itemvalue="Application.CodeGet" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +240,14 @@
       <workItem from="1678847617691" duration="1467000" />
       <workItem from="1678866222926" duration="3204000" />
       <workItem from="1678886800755" duration="1853000" />
-      <workItem from="1678937287348" duration="282000" />
+      <workItem from="1678937287348" duration="2155000" />
+      <workItem from="1679040100866" duration="1255000" />
+      <workItem from="1679055217424" duration="941000" />
+      <workItem from="1679236412862" duration="4640000" />
+      <workItem from="1679275818092" duration="28365000" />
+      <workItem from="1679449732744" duration="5447000" />
+      <workItem from="1679469671899" duration="9425000" />
+      <workItem from="1679536039457" duration="24530000" />
     </task>
     <task id="LOCAL-00001" summary="menu">
       <created>1678780376727</created>

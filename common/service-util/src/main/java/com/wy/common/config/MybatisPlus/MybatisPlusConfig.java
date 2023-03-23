@@ -12,8 +12,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan("com.wy.auth.mapper")
 public class MybatisPlusConfig {
-
-
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         //创建MybatisPlusInterceptor 拦截器对象

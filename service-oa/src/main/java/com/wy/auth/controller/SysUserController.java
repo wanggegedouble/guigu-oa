@@ -7,7 +7,9 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wy.auth.service.SysUserService;
+import com.wy.common.config.exception.GuiguException;
 import com.wy.common.result.Result;
+import com.wy.common.utils.MD5;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -66,16 +68,60 @@ public class SysUserController {
 
     @ApiOperation("修改用户状态")
     @GetMapping("updateStatus/{id}/{status}")
-    public Result updateStatus(@PathVariable Long id,@PathVariable Integer status){
-        userService.updateStatus(id,status);
-        return Result.ok();
+    public Result updateStatus(@PathVariable Long id,@PathVariable Integer status) {
+        userService.updateStatus(id, status);
+        return Result.ok().message("修改成功");
     }
 
     @ApiOperation("更新用户数据")
     @PutMapping("/updateUser")
     public Result updateById(@RequestBody SysUser sysUser) {
+        if (!sysUser.getPassword().isEmpty()) {
+            String pass_md5 = MD5.encrypt(sysUser.getPassword());
+            sysUser.setPassword(pass_md5);
+        }
         userService.updateById(sysUser);
         return Result.ok();
+    }
+
+    @ApiOperation(value = "添加用户")
+    @PostMapping("save")
+    public Result save(@RequestBody SysUser user) {
+        //密码进行加密，使用MD5
+        String passwordMD5 = MD5.encrypt(user.getPassword());
+        user.setPassword(passwordMD5);
+        userService.save(user);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "根据用户Id查询")
+    @GetMapping("getById/{id}")
+    public Result getById(@PathVariable Long id) {
+        LambdaQueryWrapper<SysUser> lqw = new LambdaQueryWrapper<>();
+        lqw.eq(SysUser::getId, id);
+        List<SysUser> list = userService.list(lqw);
+        if (list.size()<0){
+            throw new GuiguException(201,"无此用户");
+        }
+        return Result.ok(list);
+    }
+
+    @ApiOperation("删除用户")
+    @DeleteMapping("deleteById/{id}")
+    public Result deleteById(@PathVariable Long id){
+        LambdaQueryWrapper<SysUser> lqw = new LambdaQueryWrapper<>();
+        lqw.eq(SysUser::getId,id);
+        SysUser one = userService.getOne(lqw);
+        if (one ==null) {
+            throw new GuiguException(201,"无此用户");
+        }
+        boolean is_success = userService.remove(lqw);
+        if (is_success) {
+            return Result.ok().message("删除成功");
+        }
+        else {
+            return Result.fail().message("删除失败");
+        }
     }
 
 

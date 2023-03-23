@@ -34,7 +34,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         log.info(existUserRoleList.toString());
         //从查询出来的用户id对应角色list集合，获取所有角色id
         List<Long> existRoleIdList =
-                existUserRoleList.stream().map(c -> c.getRoleId()).collect(Collectors.toList());
+                existUserRoleList.stream().map(SysUserRole::getRoleId).collect(Collectors.toList());
         log.info("从查询出来的用户id对应角色list集合，获取所有角色id");
         log.info(existRoleIdList.toString());
         //3 根据角色Id 找打对应的角色信息 根据角色id 到角色list 集合查找
@@ -52,7 +52,7 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         roleMap.put("assginRoleList", assignRoleList);
         log.info("把两部分结果封装成map 返回");
         log.info(roleMap.toString());
-        // roleMap.put("allRolesList", sysRoles);
+        roleMap.put("allRolesList", sysRoles);
         return roleMap;
     }
 

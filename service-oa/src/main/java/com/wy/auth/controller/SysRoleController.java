@@ -27,7 +27,7 @@ public class SysRoleController {
     private SysRoleService sysRoleService;
 
     @ApiOperation("查询所有角色")
-    @GetMapping("/findAll")
+    @GetMapping("findAll")
     public Result findAll() {
         List<SysRole> list = sysRoleService.list();
         return Result.ok(list);
@@ -49,7 +49,7 @@ public class SysRoleController {
     }
 
     @ApiOperation("添加角色")
-    @GetMapping("/save")
+    @GetMapping("save")
     public Result save(SysRole sysRole){
         boolean is_success = sysRoleService.save(sysRole);
         if (is_success){
@@ -59,14 +59,14 @@ public class SysRoleController {
     }
 
     @ApiOperation("根据id查询")
-    @GetMapping("/get/{id}")
+    @GetMapping("get/{id}")
     public Result getById(@PathVariable Long id){
         SysRole sysRoleOne = sysRoleService.getById(id);
         return Result.ok(sysRoleOne);
     }
 
     @ApiOperation("修改角色")
-    @PutMapping("/update")
+    @PutMapping("update")
     public Result update(SysRole sysRole){
         boolean is_success = sysRoleService.updateById(sysRole);
         if (is_success){
@@ -101,10 +101,9 @@ public class SysRoleController {
     }
 
     @ApiOperation("获取用户角色数据")
-    @GetMapping("/toAssign/{userId}")
-    public Result toAssign(@PathVariable Long userId){
-        Map<String,Object> user_role = sysRoleService.findRoleDataByUserId(userId);
-        log.info(user_role.toString());
+    @GetMapping("/toAssign/{roleId}")
+    public Result toAssign(@PathVariable Long roleId){
+        Map<String,Object> user_role = sysRoleService.findRoleDataByUserId(roleId);
         return Result.ok(user_role);
     }
 
@@ -114,6 +113,5 @@ public class SysRoleController {
         sysRoleService.doAssign(assginRoleVo);
         return Result.ok();
     }
-
 
 }

@@ -3,6 +3,7 @@ package com.wy.auth.service.Impl;
 import com.atguigu.model.system.SysMenu;
 import com.atguigu.model.system.SysRoleMenu;
 import com.atguigu.vo.system.AssginMenuVo;
+import com.atguigu.vo.system.MetaVo;
 import com.atguigu.vo.system.RouterVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.wy.auth.mapper.SysMenuMapper;
@@ -14,10 +15,11 @@ import com.wy.common.config.exception.GuiguException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -63,29 +65,25 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     public List<SysMenu> findMenuByRoleId(Long roleId) {
         //1 查询所有菜单- 添加条件 status=1
         LambdaQueryWrapper<SysMenu> wrapperSysMenu = new LambdaQueryWrapper<>();
-        wrapperSysMenu.eq(SysMenu::getStatus,1);
+        wrapperSysMenu.eq(SysMenu::getStatus,0);
         List<SysMenu> allSysMenuList = baseMapper.selectList(wrapperSysMenu);
 
-        //2 根据角色id roleId查询 角色菜单关系表里面 角色id对应所有的菜单id
+        //2 根据roleId查询 角色菜单关系表里面 角色id对应所有的菜单id
         LambdaQueryWrapper<SysRoleMenu> wrapperSysRoleMenu = new LambdaQueryWrapper<>();
         wrapperSysRoleMenu.eq(SysRoleMenu::getRoleId,roleId);
         List<SysRoleMenu> sysRoleMenuList = roleMenuService.list(wrapperSysRoleMenu);
+        log.info("根据roleId查询 角色菜单关系表里面 角色id对应所有的菜单id");
+        log.info(sysRoleMenuList.toString());
 
         //3 根据获取菜单id，获取对应菜单对象
-        List<Long> menuIdList = sysRoleMenuList.stream().map(c -> c.getMenuId()).collect(Collectors.toList());
+        List<Long> menuIdList = sysRoleMenuList.stream().map(SysRoleMenu::getMenuId).collect(Collectors.toList());
 
         //3.1 拿着菜单id 和所有菜单集合里面id进行比较，如果相同封装
-        allSysMenuList.stream().forEach(item -> {
-            if(menuIdList.contains(item.getId())) {
-                item.setSelect(true);
-            } else {
-                item.setSelect(false);
-            }
-        });
-
+        allSysMenuList.forEach(item -> item.setSelect(menuIdList.contains(item.getId())));
+        log.info("拿着菜单id 和所有菜单集合里面id进行比较，如果相同封装");
+        log.info(allSysMenuList.toString());
         //4 返回规定树形显示格式菜单列表
-        List<SysMenu> sysMenuList = MenuHelper.buildTree(allSysMenuList);
-        return sysMenuList;
+        return MenuHelper.buildTree(allSysMenuList);
     }
 
     @Override
@@ -109,13 +107,98 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         }
     }
 
+    //4 根据用户id获取用户可以操作菜单列表
     @Override
     public List<RouterVo> findUserMenuListByUserId(Long userId) {
-        return null;
+        List<SysMenu> sysMenuList = null;
+        //1 判断当前用户是否是管理员   userId=1是管理员
+        //1.1 如果是管理员，查询所有菜单列表
+        if(userId == 1) {
+            //查询所有菜单列表
+            LambdaQueryWrapper<SysMenu> wrapper = new LambdaQueryWrapper<>();
+            wrapper.eq(SysMenu::getStatus,0);
+            wrapper.orderByAsc(SysMenu::getSortValue);
+            sysMenuList = baseMapper.selectList(wrapper);
+        } else {
+            //1.2 如果不是管理员，根据userId查询可以操作菜单列表
+            //多表关联查询：用户角色关系表 、 角色菜单关系表、 菜单表
+            sysMenuList = baseMapper.findMenuListByUserId(userId);
+        }
+        //2 把查询出来数据列表-构建成框架要求的路由结构
+        //使用菜单操作工具类构建树形结构
+        List<SysMenu> sysMenuTreeList = MenuHelper.buildTree(sysMenuList);
+        //构建成框架要求的路由结构
+        return buildRouter(sysMenuTreeList);
+    }
+
+    private List<RouterVo> buildRouter(List<SysMenu> sysMenuTreeList) {
+        //创建list集合，存储最终数据
+        List<RouterVo> routers = new ArrayList<>();
+        //sysMenuTreeList遍历
+        for(SysMenu menu : sysMenuTreeList) {
+            RouterVo router = new RouterVo();
+            router.setHidden(false);
+            router.setAlwaysShow(false);
+            router.setPath(getRouterPath(menu));
+            router.setComponent(menu.getComponent());
+            router.setMeta(new MetaVo(menu.getName(), menu.getIcon()));
+            //下一层数据部分
+            List<SysMenu> children = menu.getChildren();
+            if(menu.getType() == 1) {
+                //加载出来下面隐藏路由
+                List<SysMenu> hiddenMenuList = children.stream()
+                        .filter(item -> !StringUtils.isEmpty(item.getComponent()))
+                        .collect(Collectors.toList());
+                for(SysMenu hiddenMenu : hiddenMenuList) {
+                    RouterVo hiddenRouter = new RouterVo();
+                    //true 隐藏路由
+                    hiddenRouter.setHidden(true);
+                    hiddenRouter.setAlwaysShow(false);
+                    hiddenRouter.setPath(getRouterPath(hiddenMenu));
+                    hiddenRouter.setComponent(hiddenMenu.getComponent());
+                    hiddenRouter.setMeta(new MetaVo(hiddenMenu.getName(), hiddenMenu.getIcon()));
+                    routers.add(hiddenRouter);
+                }
+            } else {
+                if(!CollectionUtils.isEmpty(children)) {
+                    if(children.size() > 0) {
+                        router.setAlwaysShow(true);
+                    }
+                    //递归
+                    router.setChildren(buildRouter(children));
+                }
+            }
+            routers.add(router);
+        }
+        return routers;
+    }
+
+    private String getRouterPath(SysMenu menu) {
+        String routerPath = "/" + menu.getPath();
+        if(menu.getParentId().intValue() != 0) {
+            routerPath = menu.getPath();
+        }
+        return routerPath;
     }
 
     @Override
     public List<String> findUserPermsByUserId(Long userId) {
-        return null;
+        //1 判断是否是管理员，如果是管理员，查询所有按钮列表
+        List<SysMenu> sysMenuList = null;
+        if(userId == 1) {
+            //查询所有菜单列表
+            LambdaQueryWrapper<SysMenu> wrapper = new LambdaQueryWrapper<>();
+            wrapper.eq(SysMenu::getStatus,0);
+            sysMenuList = baseMapper.selectList(wrapper);
+        } else {
+            //2 如果不是管理员，根据userId查询可以操作按钮列表
+            //多表关联查询：用户角色关系表 、 角色菜单关系表、 菜单表
+            sysMenuList = baseMapper.findMenuListByUserId(userId);
+        }
+        //3 从查询出来的数据里面，获取可以操作按钮值的list集合，返回
+        return sysMenuList.stream()
+                .filter(item -> item.getType() == 2)
+                .map(SysMenu::getPerms)
+                .collect(Collectors.toList());
     }
 }
