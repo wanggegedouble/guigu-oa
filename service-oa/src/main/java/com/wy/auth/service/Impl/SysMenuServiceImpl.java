@@ -65,9 +65,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     public List<SysMenu> findMenuByRoleId(Long roleId) {
         //1 查询所有菜单- 添加条件 status=1
         LambdaQueryWrapper<SysMenu> wrapperSysMenu = new LambdaQueryWrapper<>();
-        wrapperSysMenu.eq(SysMenu::getStatus,0);
+        wrapperSysMenu.eq(SysMenu::getStatus,1);
         List<SysMenu> allSysMenuList = baseMapper.selectList(wrapperSysMenu);
-
         //2 根据roleId查询 角色菜单关系表里面 角色id对应所有的菜单id
         LambdaQueryWrapper<SysRoleMenu> wrapperSysRoleMenu = new LambdaQueryWrapper<>();
         wrapperSysRoleMenu.eq(SysRoleMenu::getRoleId,roleId);
@@ -106,7 +105,6 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             roleMenuService.save(sysRoleMenu);
         }
     }
-
     //4 根据用户id获取用户可以操作菜单列表
     @Override
     public List<RouterVo> findUserMenuListByUserId(Long userId) {
@@ -116,7 +114,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         if(userId == 1) {
             //查询所有菜单列表
             LambdaQueryWrapper<SysMenu> wrapper = new LambdaQueryWrapper<>();
-            wrapper.eq(SysMenu::getStatus,0);
+            wrapper.eq(SysMenu::getStatus,1);
             wrapper.orderByAsc(SysMenu::getSortValue);
             sysMenuList = baseMapper.selectList(wrapper);
         } else {
@@ -149,6 +147,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
                 List<SysMenu> hiddenMenuList = children.stream()
                         .filter(item -> !StringUtils.isEmpty(item.getComponent()))
                         .collect(Collectors.toList());
+                log.info("加载出来下面隐藏路由");
+                log.info(hiddenMenuList.toString());
                 for(SysMenu hiddenMenu : hiddenMenuList) {
                     RouterVo hiddenRouter = new RouterVo();
                     //true 隐藏路由
@@ -170,6 +170,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             }
             routers.add(router);
         }
+        log.info("构建成框架要求的路由结构");
+        log.info(routers.toString());
         return routers;
     }
 
@@ -188,7 +190,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         if(userId == 1) {
             //查询所有菜单列表
             LambdaQueryWrapper<SysMenu> wrapper = new LambdaQueryWrapper<>();
-            wrapper.eq(SysMenu::getStatus,0);
+            wrapper.eq(SysMenu::getStatus,1);
             sysMenuList = baseMapper.selectList(wrapper);
         } else {
             //2 如果不是管理员，根据userId查询可以操作按钮列表

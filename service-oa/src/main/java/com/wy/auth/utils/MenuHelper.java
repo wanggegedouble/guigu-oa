@@ -20,8 +20,8 @@ public class MenuHelper {
         List<SysMenu> tress = new ArrayList<>();
         for (SysMenu sysMenu : menuList) {
             if (sysMenu.getParentId().longValue()==0){
-                log.info("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                log.info(sysMenu.toString());
+//                log.info("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//                log.info(sysMenu.toString());
                 tress.add(getChildren(sysMenu,menuList));
             }
         }
@@ -38,19 +38,19 @@ public class MenuHelper {
         sysMenu.setChildren(new ArrayList<SysMenu>());
         for (SysMenu it : menuList) {
             if(sysMenu.getId().longValue() == it.getParentId().longValue()) {
-
-                log.info("<------------->");
-                log.info(sysMenu.getChildren().toString());
+//
+//                log.info("<------------->");
+//                log.info(sysMenu.getChildren().toString());
                 if (sysMenu.getChildren() == null) {
                     sysMenu.setChildren(new ArrayList<>());
                 }
                 sysMenu.getChildren().add(getChildren(it,menuList));
-                log.info("===================================");
-                log.info(sysMenu.getChildren().toString());
+//                log.info("===================================");
+//                log.info(sysMenu.getChildren().toString());
             }
         }
-        log.info("sysMenu:~~~~~~");
-        log.info(sysMenu.toString());
+//        log.info("sysMenu:~~~~~~");
+//        log.info(sysMenu.toString());
         return sysMenu;
     }
 }
