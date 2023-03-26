@@ -57,6 +57,13 @@ public class SysMenuController {
         return Result.ok();
     }
 
+    @ApiOperation(value = "新增菜单")
+    @PostMapping("save")
+    public Result save(@RequestBody SysMenu sysMenu) {
+        menuService.save(sysMenu);
+        return Result.ok();
+    }
+
     @ApiOperation(value = "修改菜单")
     @PutMapping("update")
     public Result updateById(@RequestBody SysMenu sysMenu) {

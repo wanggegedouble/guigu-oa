@@ -1,6 +1,5 @@
 package com.wy.auth.controller;
 
-import cn.hutool.crypto.digest.DigestUtil;
 import com.atguigu.model.system.SysUser;
 import com.atguigu.vo.system.LoginVo;
 import com.atguigu.vo.system.RouterVo;
@@ -75,7 +74,7 @@ public class IndexController {
         String token = request.getHeader("token");
         //2 从token字符串获取用户id 或者 用户名称
         Long userId = JwtHelper.getUserId(token);
-        //Long userId =1L;
+//        Long userId = 1L;
         log.info("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         log.info(token+"");
 

@@ -130,6 +130,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     }
 
     private List<RouterVo> buildRouter(List<SysMenu> sysMenuTreeList) {
+        log.info("sysMenuTreeList");
+        log.info(sysMenuTreeList.toString());
         //创建list集合，存储最终数据
         List<RouterVo> routers = new ArrayList<>();
         //sysMenuTreeList遍历
@@ -142,9 +144,11 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             router.setMeta(new MetaVo(menu.getName(), menu.getIcon()));
             //下一层数据部分
             List<SysMenu> children = menu.getChildren();
+            //type 为1代表菜单 2为按钮
             if(menu.getType() == 1) {
                 //加载出来下面隐藏路由
-                List<SysMenu> hiddenMenuList = children.stream()
+                List<SysMenu>
+                        hiddenMenuList = children.stream()
                         .filter(item -> !StringUtils.isEmpty(item.getComponent()))
                         .collect(Collectors.toList());
                 log.info("加载出来下面隐藏路由");
@@ -161,8 +165,10 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
                 }
             } else {
                 if(!CollectionUtils.isEmpty(children)) {
+                    log.info(menu.getName());
                     if(children.size() > 0) {
-                        router.setAlwaysShow(true);
+                        log.info("hahahahahahahahahahahahahahahahah ");
+                        router.setAlwaysShow(false);
                     }
                     //递归
                     router.setChildren(buildRouter(children));
@@ -176,6 +182,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     }
 
     private String getRouterPath(SysMenu menu) {
+        log.info("menu");
+        log.info(menu.toString());
         String routerPath = "/" + menu.getPath();
         if(menu.getParentId().intValue() != 0) {
             routerPath = menu.getPath();
@@ -183,6 +191,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         return routerPath;
     }
 
+    //5 根据用户id获取用户可以操作按钮列表
     @Override
     public List<String> findUserPermsByUserId(Long userId) {
         //1 判断是否是管理员，如果是管理员，查询所有按钮列表
@@ -196,6 +205,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             //2 如果不是管理员，根据userId查询可以操作按钮列表
             //多表关联查询：用户角色关系表 、 角色菜单关系表、 菜单表
             sysMenuList = baseMapper.findMenuListByUserId(userId);
+            log.info("根据userId查询可以操作按钮列表");
+            log.info(sysMenuList.toString());
         }
         //3 从查询出来的数据里面，获取可以操作按钮值的list集合，返回
         return sysMenuList.stream()

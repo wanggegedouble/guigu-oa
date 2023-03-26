@@ -76,7 +76,7 @@ public class SysRoleController {
     }
 
     @ApiOperation("根据Id删除")
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("remove/{id}")
     public Result deleteById(@PathVariable Long id){
         boolean is_success = sysRoleService.removeById(id);
         if (is_success){
