@@ -1,12 +1,14 @@
 package com.wy.common.config.exception;
 
 import com.wy.common.result.Result;
+import com.wy.common.result.ResultCodeEnum;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.nio.file.AccessDeniedException;
+
 
 @ControllerAdvice
 @Slf4j
@@ -34,6 +36,7 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return Result.fail().code(e.getCode()).message(e.getMsg());
     }
+
     /**
      * spring security异常
      * @param e
@@ -41,7 +44,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(AccessDeniedException.class)
     @ResponseBody
-    public Result error(AccessDeniedException e) throws AccessDeniedException {
-        return Result.fail().code(205).message("没有操作权限");
+    public Result error(AccessDeniedException e) {
+        return Result.build(null, ResultCodeEnum.PERMISSION);
     }
 }

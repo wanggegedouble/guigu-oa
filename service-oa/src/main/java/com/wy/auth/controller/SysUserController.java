@@ -36,7 +36,7 @@ public class SysUserController {
     private SysUserService userService;
 
     @ApiOperation("查询所有用户")
-    @GetMapping("/findUsers")
+    @GetMapping("findUsers")
     public Result findUsers(){
         List<SysUser> users = userService.list();
         return Result.ok(users);
@@ -74,7 +74,7 @@ public class SysUserController {
     }
 
     @ApiOperation("更新用户数据")
-    @PutMapping("/updateUser")
+    @PutMapping("updateUser")
     public Result updateById(@RequestBody SysUser sysUser) {
         if (!sysUser.getPassword().isEmpty()) {
             String pass_md5 = MD5.encrypt(sysUser.getPassword());

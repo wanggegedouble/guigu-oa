@@ -181,6 +181,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         return routers;
     }
 
+    //
     private String getRouterPath(SysMenu menu) {
         log.info("menu");
         log.info(menu.toString());

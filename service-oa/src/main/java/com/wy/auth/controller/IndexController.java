@@ -28,7 +28,7 @@ import java.util.Map;
  */
 @Api(tags = "登录接口管理")
 @RestController
-@RequestMapping("controller/index")
+@RequestMapping("/controller/index")
 @Slf4j
 public class IndexController {
 
@@ -40,7 +40,7 @@ public class IndexController {
 
 
     @ApiOperation("登录")
-    @PostMapping("/login")
+    @PostMapping("login")
     public Result login(@RequestBody LoginVo loginVo){
         log.info("username"+loginVo.getUsername());
         String userName = loginVo.getUsername();
@@ -65,7 +65,8 @@ public class IndexController {
         Map<String,Object> map = new HashMap<>();
         map.put("token",token);
         return Result.ok(map);
-    }
+        }
+
 
     @ApiOperation("info")
     @GetMapping("info")

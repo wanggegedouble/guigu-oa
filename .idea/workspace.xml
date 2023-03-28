@@ -4,29 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e50dbb67-4f8b-4605-ae22-5b73757876ff" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/result/ResponseUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/spring-security/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/custom/CustomMd5PasswordEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/custom/CustomUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/custom/UserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/filter/TokenAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/filter/TokenLoginFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="e50dbb67-4f8b-4605-ae22-5b73757876ff" name="Changes" comment="springSecurity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/result/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/result/ResultCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/jwt/JwtHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/wy/common/jwt/JwtHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/knife4j/Knife4jConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/wy/common/config/knife4j/Knife4jConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/spring-security/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/custom/CustomMd5PasswordEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/custom/CustomMd5PasswordEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/custom/CustomUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/custom/CustomUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/custom/UserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/filter/TokenAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/filter/TokenAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/filter/TokenLoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/spring-security/src/main/java/com/wy/security/filter/TokenLoginFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/ServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/ServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/controller/SysUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/mapper/xml/SysMenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/mapper/xml/SysMenuMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysMenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/SysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/service/Impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +45,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/service-oa/src/main/java/com/wy/auth/mapper/xml/SysMenuMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="jar://D:/maven/apache-maven-3.8.7/mavn_repository/ch/qos/logback/logback-classic/1.2.11/logback-classic-1.2.11-sources.jar!/ch/qos/logback/classic/Level.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://D:/maven/apache-maven-3.8.7/mavn_repository/ch/qos/logback/logback-classic/1.2.11/logback-classic-1.2.11-sources.jar!/ch/qos/logback/classic/pattern/LevelConverter.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://D:/maven/apache-maven-3.8.7/mavn_repository/ch/qos/logback/logback-core/1.2.11/logback-core-1.2.11-sources.jar!/ch/qos/logback/core/pattern/DynamicConverter.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://D:/maven/apache-maven-3.8.7/mavn_repository/org/springframework/boot/spring-boot/2.7.8/spring-boot-2.7.8-sources.jar!/org/springframework/boot/ansi/AnsiOutput.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://D:/maven/apache-maven-3.8.7/mavn_repository/org/springframework/boot/spring-boot/2.7.8/spring-boot-2.7.8-sources.jar!/org/springframework/boot/logging/logback/ColorConverter.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -96,7 +99,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
     "spring.configuration.checksum": "8a604bca848cb439ecf3b1c0c25b4f2b",
     "vue.rearranger.settings.migration": "true"
   },
@@ -240,7 +243,9 @@
       <workItem from="1679626573713" duration="8113000" />
       <workItem from="1679664318151" duration="12530000" />
       <workItem from="1679724132262" duration="13264000" />
-      <workItem from="1679807431858" duration="8338000" />
+      <workItem from="1679807431858" duration="26826000" />
+      <workItem from="1679880942415" duration="29423000" />
+      <workItem from="1679969598155" duration="14164000" />
     </task>
     <task id="LOCAL-00001" summary="menu">
       <created>1678780376727</created>
@@ -256,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679665900655</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="springSecurity">
+      <created>1679822939390</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679822939391</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +288,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="menu" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="springSecurity" />
+    <option name="LAST_COMMIT_MESSAGE" value="springSecurity" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="io.jsonwebtoken.ExpiredJwtException" package="io.jsonwebtoken" />
+          <option name="timeStamp" value="18" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

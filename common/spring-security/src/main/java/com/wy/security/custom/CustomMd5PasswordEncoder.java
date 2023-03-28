@@ -1,7 +1,6 @@
 package com.wy.security.custom;
 
 import com.wy.common.utils.MD5;
-import org.springframework.context.annotation.Import;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -13,8 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomMd5PasswordEncoder implements PasswordEncoder {
     @Override
-    public String encode(CharSequence rawPassword)
-    {
+    public String encode(CharSequence rawPassword) {
         return MD5.encrypt(rawPassword.toString());
     }
 

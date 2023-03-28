@@ -50,8 +50,9 @@ public class JwtHelper {
     //从生成token字符串获取用户名称
     public static String getUsername(String token) {
         try {
-            if (StringUtils.isEmpty(token)) return "";
-
+            if (StringUtils.isEmpty(token)) {
+                return "";
+            }
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(tokenSignKey).parseClaimsJws(token);
             Claims claims = claimsJws.getBody();
             return (String) claims.get("username");
