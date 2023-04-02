@@ -7,7 +7,6 @@ package com.wy.security.filter;
  */
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.wy.common.jwt.JwtHelper;
 import com.wy.common.result.ResponseUtil;
 import com.wy.common.result.Result;
@@ -27,7 +26,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 /**
@@ -73,7 +71,6 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
         log.info("request:\n"+request);
         String token = request.getHeader("token");
-        //String token = String.valueOf(request.getHeaders("token"));
         log.info("token");
         log.info(token);
         if (!StringUtils.isEmpty(token)) {

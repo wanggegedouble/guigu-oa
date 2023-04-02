@@ -109,6 +109,8 @@ public class SysRoleController {
         return Result.fail();
     }
 
+
+    @PreAuthorize("hasAuthority('bnt.sysRole.list')")
     @ApiOperation("获取用户角色数据")
     @GetMapping("toAssign/{roleId}")
     public Result toAssign(@PathVariable Long roleId){
@@ -116,6 +118,7 @@ public class SysRoleController {
         return Result.ok(user_role);
     }
 
+    @PreAuthorize("hasAuthority('bnt.sysRole.list')")
     @ApiOperation(value = "根据用户分配角色")
     @PostMapping("doAssign")
     public Result doAssign(@RequestBody AssginRoleVo assginRoleVo) {

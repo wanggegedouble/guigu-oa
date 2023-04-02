@@ -14,6 +14,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,10 +36,14 @@ public class SysUserController {
     @Autowired
     private SysUserService userService;
 
+    @PreAuthorize("hasAuthority('bnt.sysRole.list')")
     @ApiOperation("查询所有用户")
-    @GetMapping("findUsers")
-    public Result findUsers(){
+    @GetMapping("findUsers/{page}/{limit}")
+    public Result findUsers(@PathVariable Long page,
+                            @PathVariable Long limit){
         List<SysUser> users = userService.list();
+        Page<SysUser> userParam = new Page<>(page,limit);
+        IPage<SysUser> userIPage = userService.page(userParam);
         return Result.ok(users);
     }
 

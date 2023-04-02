@@ -45,6 +45,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(AccessDeniedException.class)
     @ResponseBody
     public Result error(AccessDeniedException e) {
+        e.printStackTrace();
         return Result.build(null, ResultCodeEnum.PERMISSION);
     }
 }

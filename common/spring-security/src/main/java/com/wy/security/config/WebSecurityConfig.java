@@ -27,12 +27,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  */
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)   //开启注解功能，默认禁用注解
 @Slf4j
 @Import(CustomMd5PasswordEncoder.class)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
+
     @Autowired
     private RedisTemplate redisTemplate;
 

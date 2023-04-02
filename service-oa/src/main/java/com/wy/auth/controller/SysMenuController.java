@@ -42,6 +42,7 @@ public class SysMenuController {
         return Result.ok();
     }
 
+    
     //查询所有菜单和角色分配的菜单
     @ApiOperation("查询所有菜单和角色分配的菜单")
     @GetMapping("toAssign/{roleId}")
@@ -56,6 +57,7 @@ public class SysMenuController {
         menuService.doAssign(assginMenuVo);
         return Result.ok();
     }
+
 
     @ApiOperation(value = "新增菜单")
     @PostMapping("save")
